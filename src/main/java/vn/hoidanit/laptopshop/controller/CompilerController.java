@@ -19,11 +19,6 @@ public class CompilerController {
     @Autowired
     private CompilerService compilerService;
 
-    @GetMapping("/")
-    public String getHome() {
-        return "home";
-    }
-
     @GetMapping("/cau1")
     public String index(Model model) {
         // Mã C++ mặc định để hiển thị trong trình soạn thảo

@@ -1,0 +1,556 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh điều hướng */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.body {
+    font-family: "Roboto", sans-serif;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+
+}
+
+/* Home */
+.home-section,
+.rank-section {
+    transition: opacity 0.3s ease;
+    /* Hiệu ứng mượt mà khi chuyển đổi */
+}
+
+.home-section.hidden,
+.rank-section.hidden {
+    display: none;
+    opacity: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+.active {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background: #f4f4f4;
+}
+
+/* Hiện dropdown khi hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Nút Login */
+.login-btn {
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.announcement-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.refresh-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* PHÂN TRANG */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.page-btn {
+    padding: 5px 10px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.page-number {
+    font-weight: bold;
+}
+
+/* Ẩn form ban đầu */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Hộp chứa form */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    position: relative;
+
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    animation: rainbow 2s infinite linear;
+}
+
+.modal-content p {
+    display: flex;
+    text-align: left;
+    color: red;
+}
+
+@keyframes rainbow {
+    0% {
+        color: red;
+    }
+
+    20% {
+        color: orange;
+    }
+
+    40% {
+        color: yellow;
+    }
+
+    60% {
+        color: green;
+    }
+
+    80% {
+        color: blue;
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+/* Nút Login */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Nút đóng form */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Nhóm input */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #f9f9f9;
+
+}
+
+#toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.input-group i {
+    padding: 10px;
+    color: gray;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    background: none;
+}
+
+
+
+
+/* Quên mật khẩu */
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+
+
+footer {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#footer-content a {
+    text-decoration: none;
+}
+
+#footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Reset và cơ bản */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tiêu đề chào mừng (Hero Section) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #007bff, #00c4cc);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    padding: 12px 25px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Thông báo (Announcements) */
+.announcements {
+    margin-bottom: 40px;
+}
+
+.announcements h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.announcement-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.announcement-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.announcement-card span {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Bài tập nổi bật (Featured Problems) */
+.featured-problems {
+    margin-bottom: 40px;
+}
+
+.featured-problems h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.problem-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.problem-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+}
+
+.problem-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.problem-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.solve-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.solve-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Cuộc thi sắp tới (Upcoming Contests) */
+.upcoming-contests {
+    margin-bottom: 40px;
+}
+
+.upcoming-contests h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contest-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contest-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contest-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.register-btn {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
+
+/* Bảng xếp hạng (Leaderboard) */
+.leaderboard {
+    margin-bottom: 40px;
+}
+
+.leaderboard h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.leaderboard-list {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-item {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.view-more {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .problem-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .problem-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .announcements h2,
+    .featured-problems h2,
+    .upcoming-contests h2,
+    .leaderboard h2 {
+        font-size: 24px;
+    }
+}
