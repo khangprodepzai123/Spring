@@ -19,11 +19,10 @@
                     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
                     rel="stylesheet">
                 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+                <link href="/css/client/css/contest.css" rel="stylesheet" />
                 <link href="/css/admin/css/dash.css" rel="stylesheet" />
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-                    rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-                <link href="/css/client/css/rank.css" rel="stylesheet" />
+
+
                 <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 
             </head>
@@ -39,26 +38,20 @@
                 <!-- Nội dung chính -->
 
                 <main>
-                    <div class="leaderboard-header">
-                        <img alt="Golden trophy held by two hands with orange ribbon flowing around" class="trophy"
-                            src="images/client/images/pngegg.png" width="150" height="150">
-                        <h1>LeaderBoard</h1>
-
-                    </div>
-                    <div class="search-container">
-                        <div class="search-wrapper">
-                            <input type="search" placeholder="Tìm tên người dùng">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
                     <div class="container-fluid px-4">
-
+                        <section class="hero">
+                            <img src="images/client/images/k3.jpg" alt="Illustration for 3K Contest" class="hero-image">
+                        </section>
+                        <section class="intro">
+                            <h1>3K Contest</h1>
+                            <p>Contest every week. Complete and see your ranking!</p>
+                        </section>
+                        </ol>
                         <div class="mt-5">
                             <div class="row">
                                 <div class="col-12 mx-auto">
                                     <div class="d-flex justify-content-between">
-                                        <h3>Table users</h3>
-
+                                        <h3>Table Contest</h3>
                                     </div>
 
                                     <hr />
@@ -66,22 +59,22 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Email</th>
-                                                <th>Full Name</th>
+                                                <th>TEN</th>
+                                                <th>MOTA</th>
 
-                                                <th>Score</th>
+
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="user" items="${users1}">
+                                            <c:forEach var="contest" items="${contests1}">
 
                                                 <tr>
-                                                    <th>${user.id}</th>
-                                                    <td>${user.email}</td>
-                                                    <td>${user.fullName}</td>
+                                                    <!-- <th>${problem.id}</th> -->
+                                                    <td><a href="/contests/${contest.ID}">${contest.ID}</a></td>
+                                                    <td>${contest.TEN}</td>
+                                                    <td>${contest.MOTA}</td>
 
-                                                    <td>${user.sobaicode}</td>
 
 
                                                 </tr>

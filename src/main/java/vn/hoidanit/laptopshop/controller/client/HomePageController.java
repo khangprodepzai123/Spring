@@ -16,4 +16,16 @@ public class HomePageController {
         return "client/auth/login";
     }
 
+    @GetMapping("/about")
+    public String getAboutPage() {
+
+        return "client/about/show";
+    }
+
+    @GetMapping("/home")
+    public String getHPage() {
+
+        return "client/homepage/show";
+    }
+
 }

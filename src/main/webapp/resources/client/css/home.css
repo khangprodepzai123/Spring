@@ -1,0 +1,417 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #0b0d3f;
+    margin: 0;
+}
+
+/* Header (from rank.css) */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 0.0625rem solid #e5e7eb;
+}
+
+.logo {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #2e2e5e;
+    user-select: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b4b6b;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #2e2e5e;
+}
+
+nav a.active {
+    color: #6b4bff;
+    border-bottom: 0.125rem solid #6b4bff;
+    padding-bottom: 0.125rem;
+}
+
+nav i {
+    font-size: 0.875rem;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.auth-buttons .signup {
+    background-color: #6b4bff;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.375rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-buttons .signup:hover {
+    background-color: #5a3edb;
+}
+
+.auth-buttons .login {
+    border: 0.0625rem solid #6b4bff;
+    color: #6b4bff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.375rem 1rem;
+    background: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-buttons .login:hover {
+    background-color: #f3f0ff;
+}
+
+/* Header banner */
+.banner {
+    max-width: 60rem;
+    margin: 1.5rem auto 0;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #3b00ff, #8a00ff);
+    padding: 2rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.banner h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner p {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.banner .start-button {
+    background-color: #ff6600;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.banner .start-button:hover {
+    background-color: #e65c00;
+}
+
+/* Main content */
+main {
+    max-width: 60rem;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Programming section */
+.programming-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #f5f7ff;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.programming-text {
+    width: 100%;
+}
+
+.programming-text h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 0.5rem;
+}
+
+.programming-text p {
+    font-size: 0.875rem;
+    color: #0b0d3f;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.programming-text .action-button,
+.exercises .action-button,
+.contest .action-button {
+    background-color: #3b3ca7;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.programming-text .action-button:hover,
+.exercises .action-button:hover,
+.contest .action-button:hover {
+    background-color: #2a2b6e;
+}
+
+.programming-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.programming-image img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+}
+
+/* Latest announcements */
+.announcements h3 {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 1rem;
+}
+
+.announcement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.announcement-list article {
+    border: 0.0625rem solid #3b3ca7;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25;
+}
+
+.announcement-list h4 {
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 0.25rem;
+}
+
+.announcement-list p {
+    color: #0b0d3f;
+    margin-bottom: 0.25rem;
+}
+
+/* Featured exercises */
+.exercises h3 {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 1.5rem;
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.exercise-grid article {
+    border: 0.0625rem solid #3b3ca7;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.exercise-grid h4 {
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 0.25rem;
+}
+
+.exercise-grid p {
+    font-size: 0.75rem;
+    color: #0b0d3f;
+    margin-bottom: 0.75rem;
+}
+
+/* Upcoming contest */
+.contest h3 {
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 1.5rem;
+}
+
+.contest article {
+    border: 0.0625rem solid #3b3ca7;
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.contest h4 {
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 0.25rem;
+}
+
+.contest p {
+    font-size: 0.75rem;
+    color: #0b0d3f;
+    margin-bottom: 1rem;
+}
+
+/* Special note section */
+.features {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.features h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0b0d3f;
+    margin-bottom: 0.75rem;
+}
+
+.features p {
+    font-size: 0.875rem;
+    color: #0b0d3f;
+    margin-bottom: 2.5rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    color: #3b00ff;
+}
+
+.feature-grid article {
+    padding: 0 0.5rem;
+    text-align: center;
+}
+
+.feature-grid i {
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-grid h4 {
+    font-weight: 600;
+    color: #3b00ff;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.feature-grid p {
+    font-size: 0.875rem;
+    color: #0b0d3f;
+}
+
+/* Footer (from rank.css) */
+footer {
+    background-color: #2e2e5e;
+    color: #fff;
+    text-align: center;
+    font-size: 0.8125rem;
+    padding: 0.5rem 0;
+    margin-top: 2.5rem;
+    user-select: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+    .exercise-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .banner h1 {
+        font-size: 1.75rem;
+    }
+
+    .banner p,
+    .programming-text p,
+    .features p {
+        font-size: 1rem;
+    }
+
+    .programming-text .action-button,
+    .exercises .action-button,
+    .contest .action-button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .programming-section {
+        flex-direction: row;
+        gap: 3rem;
+        padding: 2.5rem;
+    }
+
+    .programming-text {
+        width: 50%;
+    }
+
+    .programming-image {
+        width: 50%;
+    }
+
+    .programming-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .announcements h3,
+    .exercises h3,
+    .contest h3,
+    .features h3 {
+        font-size: 1.25rem;
+    }
+
+    .feature-grid h4 {
+        font-size: 1.125rem;
+    }
+
+
+}

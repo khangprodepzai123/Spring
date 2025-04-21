@@ -11,6 +11,7 @@
 
 
                 <link rel="stylesheet" href="/css/client/css/fit.css">
+                <link rel="stylesheet" href="/css/client/css/home.css">
                 <script src="/js/client/js/fit.js"></script>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +20,10 @@
                     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
                     rel="stylesheet">
                 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                    rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+                    rel="stylesheet">
                 <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 
             </head>
@@ -32,49 +37,93 @@
 
 
                 <!-- Nội dung chính -->
-                <main>
-                    <!-- Phần Home -->
-                    <section id="home-section" class="home-section">
-                        <section class="hero">
 
-                            <h1>Chào mừng đến với NTU Online 2.0</h1>
-                            <p>Tham gia giải bài tập, thi đấu, và nâng cao kỹ năng lập trình của bạn.</p>
-                            <button class="cta-btn">Bắt đầu ngay</button>
-                        </section>
-                        <section class="announcements">
-                            <h2>Thông báo mới nhất</h2>
-                            <div class="announcement-card">
-                                <h3>Cuộc thi lập trình tháng 4</h3>
-                                <p>Tham gia ngay để nhận giải thưởng hấp dẫn! Thời gian: 10/04/2025.</p>
-                                <span>By admin - 02/04/2025</span>
-                            </div>
-                        </section>
-                        <section class="featured-problems">
-                            <h2>Bài tập nổi bật</h2>
-                            <div class="problem-list">
-                                <div class="problem-card">
-                                    <h3>Tổng hai số</h3>
-                                    <p>Độ khó: Dễ</p>
-                                    <button class="solve-btn">Giải ngay</button>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="upcoming-contests">
-                            <h2>Cuộc thi sắp tới</h2>
-                            <div class="contest-card">
-                                <h3>NTU Coding Challenge #1</h3>
-                                <p>Ngày: 15/04/2025 - 14:00</p>
-                                <button class="register-btn">Đăng ký</button>
-                            </div>
-                        </section>
-                        <section class="leaderboard">
-                            <h2>Top coder</h2>
-                            <div class="leaderboard-list">
-                                <div class="leaderboard-item">1. coder123 - 1500 điểm</div>
-                                <div class="leaderboard-item">2. proCoder - 1400 điểm</div>
-                            </div>
-                            <a href="#" id="view-full-rank" class="view-more">Xem bảng đầy đủ</a>
-                        </section>
+                <main>
+
+                    <!-- Programming section -->
+                    <section class="programming-section">
+                        <div class="programming-text">
+                            <h2>Get really good at programming.</h2>
+                            <p>Thành thạo ngôn ngữ lập trình mà bạn mong muốn với phương pháp học tập độc đáo kết hợp
+                                với thực hành của chúng tôi cực kì hiệu quả.</p>
+                            <button class="action-button">Bắt đầu nào</button>
+                        </div>
+                        <div class="programming-image">
+                            <img alt="Illustration of four people programming in an office with purple chairs and computer screens showing code and charts"
+                                src="https://storage.googleapis.com/a1aa/image/033d0854-2b25-44ad-8428-fc3579c15bf1.jpg"
+                                width="400" height="220" loading="lazy">
+                        </div>
+                    </section>
+                    <!-- Latest announcements -->
+                    <section class="announcements">
+                        <h3>Thông báo mới nhất</h3>
+                        <div class="announcement-list">
+                            <article>
+                                <h4>Cuộc thi lập trình tháng 4</h4>
+                                <p>Tham gia ngay để nhận giải thưởng hấp dẫn! Thời gian: 30/4/2025.</p>
+                                <p>Bởi admin - 02/04/2025</p>
+                            </article>
+                            <article>
+                                <h4>Cập nhật bài code mới</h4>
+                                <p>bài code mới tên: Tính tổng 2 số nguyên đã được thêm lúc 08:30 01/04/2025</p>
+                                <p>Bởi admin - 01/04/2025</p>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- Featured exercises -->
+                    <section class="exercises">
+                        <h3>Bài tập nổi bật</h3>
+                        <div class="exercise-grid">
+                            <article>
+                                <h4>Tổng hai số</h4>
+                                <p>Độ khó: dễ</p>
+                                <button class="action-button">Làm ngay</button>
+                            </article>
+                            <article>
+                                <h4>Tổng hai số</h4>
+                                <p>Độ khó: dễ</p>
+                                <button class="action-button">Làm ngay</button>
+                            </article>
+                            <article>
+                                <h4>Tổng hai số</h4>
+                                <p>Độ khó: dễ</p>
+                                <button class="action-button">Làm ngay</button>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- Upcoming contest -->
+                    <section class="contest">
+                        <h3>Cuộc thi sắp tới</h3>
+                        <article>
+                            <h4>Kiểm tra định kỳ tháng 4</h4>
+                            <p>Ngày: 23/04/2025 - 13h30</p>
+                            <button class="action-button">Đăng ký</button>
+                        </article>
+                    </section>
+                    <!-- Special note section -->
+                    <section class="features">
+                        <h3>Chưa thấy gì đặc biệt ?</h3>
+                        <p>Tôi sẽ cho bạn thêm lí do để chọn website của chúng tôi làm nơi để rèn luyện kỹ năng lập
+                            trình</p>
+                        <div class="feature-grid">
+                            <article>
+                                <i class="fas fa-book-open"></i>
+                                <h4>Thư viện bài tập phong phú</h4>
+                                <p>Hàng ngàn bài tập về cấu trúc dữ liệu và thuật toán, được phân loại theo độ khó, giúp
+                                    bạn học và thực hành một cách hệ thống.</p>
+                            </article>
+                            <article>
+                                <i class="fas fa-code"></i>
+                                <h4>Hỗ trợ nhiều ngôn ngữ lập trình</h4>
+                                <p>Cho phép bạn luyện tập với ngôn ngữ bạn thành thạo hoặc muốn khám phá.</p>
+                            </article>
+                            <article>
+                                <i class="fas fa-building"></i>
+                                <h4>Sự chuẩn bị tốt cho phỏng vấn kỹ thuật</h4>
+                                <p>Các bài tập của website thường tương tự với những câu hỏi trong phỏng vấn tại các
+                                    công ty công nghệ lớn.</p>
+                            </article>
+                        </div>
                     </section>
                 </main>
 

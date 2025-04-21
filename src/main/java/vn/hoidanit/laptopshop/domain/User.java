@@ -43,7 +43,7 @@ public class User implements Serializable {
     private int sobaicode;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
     public static long getSerialversionuid() {

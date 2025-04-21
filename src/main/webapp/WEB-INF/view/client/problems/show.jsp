@@ -20,6 +20,11 @@
                     rel="stylesheet">
                 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
                 <link href="/css/admin/css/dash.css" rel="stylesheet" />
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                    rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+                <link href="/css/client/css/problems.css" rel="stylesheet" />
+
                 <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 
             </head>
@@ -35,12 +40,35 @@
                 <!-- Nội dung chính -->
 
                 <main>
+                    <!-- Decorative shapes top-left -->
+                    <img alt="Decorative diamond shape with green and black colors" class="deco-diamond-left"
+                        src="images/client/images/c1.png">
+                    <img alt="Decorative square shape with yellow and black colors" class="deco-square-left"
+                        src="images/client/images/c2.png">
+                    <!-- Decorative shapes top-right -->
+                    <img alt="Decorative triangle shape with yellow and black colors" class="deco-triangle-right"
+                        src="images/client/images/c2.png">
+                    <img alt="Decorative diagonal lines shape with black color" class="deco-lines-right"
+                        src="images/client/images/c2.png">
+                    <section class="intro">
+                        <img alt="Illustration of a man with brown hair and beard working on a laptop with a blue background circle"
+                            class="intro-image" src="images/client/images/k1.png">
+                        <div class="intro-text">
+                            <h1>Khám phá các bài code trên 3K</h1>
+                            <p>Mở khóa nhiều bài tập hơn khi bạn tiến bộ trong quá trình luyện tập</p>
+                        </div>
+                    </section>
+                    <!-- Search input -->
+                    <form class="search-form">
+                        <input type="search" placeholder="Tìm theo tên bài code">
+                        <i class="fas fa-search"></i>
+                    </form>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Manage Problems</h1>
+                        <!-- <h1 class="mt-4">Manage Problems</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                             <li class="breadcrumb-item active">Problems</li>
-                        </ol>
+                        </ol> -->
                         <div class="mt-5">
                             <div class="row">
                                 <div class="col-12 mx-auto">
