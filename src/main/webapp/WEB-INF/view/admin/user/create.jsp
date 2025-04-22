@@ -80,10 +80,7 @@
                                                         path="fullName" />
                                                     ${errorFullName}
                                                 </div>
-                                                <div class="mb-3 col-12">
-                                                    <label class="form-label">Username:</label>
-                                                    <form:input type="text" class="form-control" path="username" />
-                                                </div>
+
 
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Role:</label>

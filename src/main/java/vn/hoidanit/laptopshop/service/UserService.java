@@ -3,6 +3,7 @@ package vn.hoidanit.laptopshop.service;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 
 import vn.hoidanit.laptopshop.domain.Role;
 import vn.hoidanit.laptopshop.domain.User;
@@ -28,6 +29,7 @@ public class UserService {
         return this.userRepository.findOneByEmail(email);
     }
 
+    @Transactional
     public User handleSaveUser(User user) {
         User eric = this.userRepository.save(user);
         System.out.println(eric);

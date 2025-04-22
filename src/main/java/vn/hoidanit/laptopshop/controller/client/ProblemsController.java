@@ -27,8 +27,8 @@ public class ProblemsController {
         return "client/problems/show";
     }
 
-    @GetMapping("/problems/sum")
-    public String index(Model model) {
+    @GetMapping("/problems/P001")
+    public String p001(Model model) {
         // Mã C++ mặc định để hiển thị trong trình soạn thảo
         String defaultCode = "// Viết code để tính tổng của 2 số\n"
                 + "#include <iostream>\n"
@@ -47,6 +47,77 @@ public class ProblemsController {
         List<TestCase> defaultTestCases = new ArrayList<>();
         defaultTestCases.add(new TestCase("5 7", "12"));
         defaultTestCases.add(new TestCase("10 -3", "7"));
+
+        model.addAttribute("code", defaultCode);
+        model.addAttribute("testCases", defaultTestCases);
+
+        return "index";
+    }
+
+    @GetMapping("/problems/P002")
+    public String p002(Model model) {
+        // Mã C++ mặc định để hiển thị trong trình soạn thảo
+        String defaultCode = "// Viết code để kiểm tra số nguyên tố\n"
+                + "#include <iostream>\n"
+                + "using namespace std;\n\n"
+                + "bool isPrime(int n) {\n"
+                + "    if (n <= 1) return false;\n"
+                + "    for (int i = 2; i * i <= n; i++) {\n"
+                + "        if (n % i == 0) return false;\n"
+                + "    }\n"
+                + "    return true;\n"
+                + "}\n\n"
+                + "int main() {\n"
+                + "    int n;\n"
+                + "    cin >> n;\n"
+                + "    if (isPrime(n)) cout << \"YES\" << endl;\n"
+                + "    else cout << \"NO\" << endl;\n"
+                + "    return 0;\n"
+                + "}";
+
+        // Test cases mặc định
+        List<TestCase> defaultTestCases = new ArrayList<>();
+        defaultTestCases.add(new TestCase("7", "YES"));
+        defaultTestCases.add(new TestCase("4", "NO"));
+        defaultTestCases.add(new TestCase("13", "YES"));
+        defaultTestCases.add(new TestCase("1", "NO"));
+
+        model.addAttribute("code", defaultCode);
+        model.addAttribute("testCases", defaultTestCases);
+
+        return "index";
+    }
+
+    @GetMapping("/problems/P003")
+    public String p003(Model model) {
+        // Mã C++ mặc định để hiển thị trong trình soạn thảo
+        String defaultCode = "// Viết code để đảo ngược chuỗi\n"
+                + "#include <iostream>\n"
+                + "#include <string>\n"
+                + "using namespace std;\n\n"
+                + "string reverseString(string s) {\n"
+                + "    string result = s;\n"
+                + "    int left = 0, right = s.length() - 1;\n"
+                + "    while (left < right) {\n"
+                + "        swap(result[left], result[right]);\n"
+                + "        left++;\n"
+                + "        right--;\n"
+                + "    }\n"
+                + "    return result;\n"
+                + "}\n\n"
+                + "int main() {\n"
+                + "    string s;\n"
+                + "    getline(cin, s);\n"
+                + "    cout << reverseString(s) << endl;\n"
+                + "    return 0;\n"
+                + "}";
+
+        // Test cases mặc định
+        List<TestCase> defaultTestCases = new ArrayList<>();
+        defaultTestCases.add(new TestCase("Hello", "olleH"));
+        defaultTestCases.add(new TestCase("12345", "54321"));
+        defaultTestCases.add(new TestCase("A B C", "C B A"));
+        defaultTestCases.add(new TestCase("", ""));
 
         model.addAttribute("code", defaultCode);
         model.addAttribute("testCases", defaultTestCases);

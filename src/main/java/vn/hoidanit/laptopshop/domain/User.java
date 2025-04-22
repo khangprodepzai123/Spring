@@ -3,6 +3,7 @@ package vn.hoidanit.laptopshop.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,11 +35,9 @@ public class User implements Serializable {
 
     @NotNull
     @Size(min = 3, message = "Fullname phải có tối thiểu 3 ký tự")
+    @Column(name = "fullName") // Chỉ định rõ tên cột
     private String fullName;
 
-    private String username;
-
-    private String address;
     private String phone;
     private int sobaicode;
 
@@ -90,28 +89,12 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public int getSobaicode() {

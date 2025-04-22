@@ -61,14 +61,15 @@ public class UserController {
     @PostMapping("/admin/user/update")
     public String postUpdateUser(Model model, @ModelAttribute("newUser") User hoidanit) {
         User currentUser = this.userService.getUserById(hoidanit.getId());
-        if (currentUser != null) {
-            currentUser.setAddress(hoidanit.getAddress());
-            currentUser.setFullName(hoidanit.getFullName());
-            currentUser.setPassword(hoidanit.getPassword());
 
-            // bug here
-            this.userService.handleSaveUser(currentUser);
-        }
+        // In ID để debug
+        System.out.println("User ID from form: " + hoidanit.getId());
+        // currentUser.setPhone(hoidanit.getPhone());
+        currentUser.setFullName(hoidanit.getFullName());
+        currentUser.setPassword(hoidanit.getPassword());
+
+        this.userService.handleSaveUser(currentUser);
+
         return "redirect:/admin/user";
     }
 
