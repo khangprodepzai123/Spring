@@ -1,11 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Inter", sans-serif;
     background-color: #fff;
     color: #000;
     margin: 0;
+    background-image: url(images/Rank.png);
+    background-size: cover;
 }
-
-
 
 /* Header */
 header {
@@ -14,6 +20,12 @@ header {
     justify-content: space-between;
     padding: 1.5rem 2rem;
     border-bottom: 0.0625rem solid #e5e7eb;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .logo {
@@ -90,86 +102,32 @@ nav i {
     background-color: #f3f0ff;
 }
 
-/* Main */
-main {
-    max-width: 60rem;
-    margin: 2.5rem auto;
-    padding: 0 2rem;
-}
-
 .leaderboard-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
-.trophy {
-    width: 9.375rem;
-    height: 9.375rem;
+.leaderboard-header img {
+    width: 10%;
 }
 
 .leaderboard-header h1 {
     margin-top: 1rem;
-    font-size: 1.75rem;
+    font-size: 3rem;
     font-weight: 800;
-    color: #6b4bff;
+    background: linear-gradient(to bottom, #604FCD 5%, #9E00FF 100%);
     user-select: none;
-}
-
-/* Decorative shapes */
-.deco-square-left {
-    position: absolute;
-    top: 4rem;
-    left: 2.5rem;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.deco-line {
-    position: absolute;
-    top: 5rem;
-    left: 6rem;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.deco-square-right {
-    position: absolute;
-    top: 7rem;
-    right: 6rem;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.deco-diamond-left {
-    position: absolute;
-    top: 6rem;
-    left: 12rem;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.deco-diamond-right {
-    position: absolute;
-    top: 4rem;
-    right: 12rem;
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.deco-triangle {
-    position: absolute;
-    top: 5rem;
-    right: 3rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
 /* Search */
 .search-container {
-    margin-top: 2rem;
     max-width: 100%;
+    margin-bottom: 0;
 }
 
 .search-wrapper {
@@ -207,10 +165,10 @@ main {
 
 /* Table */
 .table-container {
-    margin-top: 1rem;
+    margin-top: 0;
     overflow-x: auto;
     box-shadow: 0px 4px 50px -4px rgba(0, 0, 0, 0.25);
-
+    border-radius: 10px;
 }
 
 table {
@@ -235,6 +193,10 @@ th {
     color: rgba(0, 0, 0, 0.8);
 }
 
+th:first-child {
+    text-align: center;
+}
+
 th:nth-child(3),
 th:nth-child(4) {
     text-align: right;
@@ -251,6 +213,10 @@ tbody tr td {
 
 tbody tr.top-rank td:first-child {
     font-weight: 600;
+}
+
+td:first-child {
+    text-align: center;
 }
 
 td:nth-child(3),

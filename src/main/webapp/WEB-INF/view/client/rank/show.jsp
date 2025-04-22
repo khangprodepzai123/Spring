@@ -56,20 +56,15 @@
                         <div class="mt-5">
                             <div class="row">
                                 <div class="col-12 mx-auto">
-                                    <div class="d-flex justify-content-between">
-                                        <h3>Table users</h3>
 
-                                    </div>
-
-                                    <hr />
                                     <table class=" table table-bordered table-hover ">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>Xếp hạng</th>
                                                 <th>Email</th>
-                                                <th>Full Name</th>
+                                                <th>Tên người dùng</th>
 
-                                                <th>Score</th>
+                                                <th>Điểm</th>
 
                                             </tr>
                                         </thead>

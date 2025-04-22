@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import vn.hoidanit.laptopshop.domain.DTO.ContestResultSummary;
+import vn.hoidanit.laptopshop.domain.DTO.ProblemResultSummary;
+import vn.hoidanit.laptopshop.domain.DTO.UserRankingSummary;
 import vn.hoidanit.laptopshop.domain.DTO.UserScoreSummary;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +61,8 @@ public class StatisticsRepository {
     }
 
     // RowMapper cho UserScoreSummary
-    private static final class UserScoreSummaryMapper implements RowMapper<UserScoreSummary> {
+    private static final class UserScoreSummaryMapper implements
+            RowMapper<UserScoreSummary> {
         @Override
         public UserScoreSummary mapRow(ResultSet rs, int rowNum) throws SQLException {
             UserScoreSummary summary = new UserScoreSummary();
@@ -72,18 +75,85 @@ public class StatisticsRepository {
 
     public List<UserScoreSummary> getTop5UsersByAverageScore() {
         String sql = """
-                    SELECT
-                        U.ID,
-                        U.HOTEN,
-                        ROUND(AVG(C.DIEM), 2) AS DIEM_TRUNG_BINH
-                    FROM USERS U
-                    JOIN CONTEST_RESULTS C ON U.ID = C.USER_ID
-                    WHERE C.TRANGTHAI = 'ĐÃ LÀM'
-                    GROUP BY U.ID, U.HOTEN
-                    ORDER BY DIEM_TRUNG_BINH DESC
-                    LIMIT 5
+                SELECT
+                U.ID,
+                U.HOTEN,
+                ROUND(AVG(C.DIEM), 2) AS DIEM_TRUNG_BINH
+                FROM USERS U
+                JOIN CONTEST_RESULTS C ON U.ID = C.USER_ID
+                WHERE C.TRANGTHAI = 'ĐÃ LÀM'
+                GROUP BY U.ID, U.HOTEN
+                ORDER BY DIEM_TRUNG_BINH DESC
+                LIMIT 5
                 """;
         return jdbcTemplate.query(sql, new UserScoreSummaryMapper());
+    }
+
+    // RowMapper để ánh xạ thủ công các cột từ ResultSet cho ProblemResultSummary
+    private static final class ProblemResultSummaryMapper implements RowMapper<ProblemResultSummary> {
+        @Override
+        public ProblemResultSummary mapRow(ResultSet rs, int rowNum) throws SQLException {
+            ProblemResultSummary summary = new ProblemResultSummary();
+            summary.setProblemId(rs.getString("PROBLEM_ID"));
+            summary.setProblemName(rs.getString("TEN_BAICODE"));
+            summary.setCorrectSubmissions(rs.getLong("SO_LUOT_DUNG"));
+            summary.setIncorrectSubmissions(rs.getLong("SO_LUOT_SAI"));
+            summary.setTotalSubmissions(rs.getLong("TONG_LUOT_NOP"));
+            summary.setCorrectPercentage(rs.getString("TY_LE_DUNG"));
+            return summary;
+        }
+    }
+
+    public List<ProblemResultSummary> getProblemResultSummary() {
+        String sql = """
+                    SELECT
+                        P.ID AS PROBLEM_ID,
+                        P.title AS TEN_BAICODE,
+                        SUM(CASE WHEN PR.KETQUA = 'ĐÚNG' THEN 1 ELSE 0 END) AS SO_LUOT_DUNG,
+                        SUM(CASE WHEN PR.KETQUA = 'SAI' THEN 1 ELSE 0 END) AS SO_LUOT_SAI,
+                        COUNT(*) AS TONG_LUOT_NOP,
+                        CONCAT(
+                            ROUND(
+                                100.0 * SUM(CASE WHEN PR.KETQUA = 'ĐÚNG' THEN 1 ELSE 0 END) / COUNT(*),
+                                2
+                            ),
+                            '%'
+                        ) AS TY_LE_DUNG
+                    FROM PROBLEMS P
+                    JOIN PROBLEM_RESULTS PR ON P.ID = PR.PROBLEM_ID
+                    GROUP BY P.ID, P.title
+                """;
+
+        return jdbcTemplate.query(sql, new ProblemResultSummaryMapper());
+    }
+
+    // RowMapper cho UserRankingSummary
+    private static final class UserRankingSummaryMapper implements RowMapper<UserRankingSummary> {
+        @Override
+        public UserRankingSummary mapRow(ResultSet rs, int rowNum) throws SQLException {
+            UserRankingSummary summary = new UserRankingSummary();
+            summary.setUserId(rs.getLong("ID"));
+            summary.setFullName(rs.getString("HOTEN"));
+            summary.setEmail(rs.getString("EMAIL"));
+            summary.setProblemCount(rs.getLong("SOBAICODE"));
+            return summary;
+        }
+    }
+
+    public List<UserRankingSummary> getUserRankingByProblemCount() {
+        String sql = """
+                    SELECT
+                        U.ID,
+                        U.fullName AS HOTEN,
+                        U.EMAIL,
+                        COUNT(DISTINCT PR.PROBLEM_ID) AS SOBAICODE
+                    FROM USERS U
+                    JOIN PROBLEM_RESULTS PR ON PR.USER_ID = U.ID
+                    GROUP BY U.ID, U.fullName, U.EMAIL
+                    ORDER BY SOBAICODE DESC
+                """;
+
+        return jdbcTemplate.query(sql, new UserRankingSummaryMapper());
     }
 
 }

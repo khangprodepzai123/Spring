@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-        <header>
+        <!-- <header>
             <div class="logo"><img src="images/client/images/ntu.jpg" alt=""></div>
 
             <nav>
@@ -16,4 +16,35 @@
                 </ul>
             </nav>
             <button id="loginBtn" class="login-btn">Login</button>
+        </header> -->
+
+        <header>
+            <div class="logo">3K</div>
+            <nav>
+                <a href="/home" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="/problems" class="nav-link">
+                    <i class="fas fa-th-large"></i>
+                    <span>Problems</span>
+                </a>
+                <a href="/contests" class="nav-link">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Contests</span>
+                </a>
+                <a href="/rank" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Rank</span>
+                </a>
+                <a href="/about" class="nav-link">
+                    <i class="fas fa-comments"></i>
+                    <span>About Us</span>
+                </a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="signup" onclick="openModal('signupModal', 'register.html')">Sign up</button>
+                <button class="login" onclick="openModal('loginModal', 'login.html')">Login</button>
+            </div>
+
         </header>

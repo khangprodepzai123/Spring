@@ -47,7 +47,7 @@
                                                         <th scope="row">1</th>
                                                         <td>Điểm trung bình mỗi bài thi và số lượng người đã
                                                             làm bài đó.</td>
-                                                        <td><a href="/question/1"
+                                                        <td><a href="/question/cau1a"
                                                                 class="btn btn-primary btn-sm">View</a></td>
                                                     </tr>
                                                     <tr>
@@ -58,14 +58,14 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">3</th>
-                                                        <td>Question 3</td>
-                                                        <td><a href="/question/3"
+                                                        <td>Tỷ lệ đúng sai của từng bài code</td>
+                                                        <td><a href="/question/cau1c"
                                                                 class="btn btn-primary btn-sm">View</a></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">4</th>
-                                                        <td>Question 4</td>
-                                                        <td><a href="/question/4"
+                                                        <td>Xếp hạng USERS theo số bài làm được.</td>
+                                                        <td><a href="/question/cau1d"
                                                                 class="btn btn-primary btn-sm">View</a></td>
                                                     </tr>
                                                     <tr>

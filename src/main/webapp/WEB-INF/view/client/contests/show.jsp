@@ -10,7 +10,7 @@
                 <title>Fit NTU 2.0</title>
 
 
-                <link rel="stylesheet" href="/css/client/css/fit.css">
+                <!-- <link rel="stylesheet" href="/css/client/css/fit.css"> -->
                 <script src="/js/client/js/fit.js"></script>
 
                 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
                     rel="stylesheet">
                 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
                 <link href="/css/client/css/contest.css" rel="stylesheet" />
-                <link href="/css/admin/css/dash.css" rel="stylesheet" />
+                <!-- <link href="/css/admin/css/dash.css" rel="stylesheet" /> -->
 
 
                 <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
@@ -54,7 +54,6 @@
                                     <h2>Weekly Contest #1</h2>
                                     <p>Chủ nhật 9:30 AM</p>
                                 </div>
-                                <button class="register-button"><a href="/contests/CT001">Đăng ký</a></button>
                             </div>
                             <div class="contest-card contest-card-08" data-contest-id="contest-2">
                                 <img alt="Illustration representing Weekly Contest #2" class="contest-image"
@@ -63,7 +62,6 @@
                                     <h2>Weekly Contest #2</h2>
                                     <p>Chủ nhật 17:30 PM</p>
                                 </div>
-                                <button class="register-button"><a href="/contests/CT002">Đăng ký</a></button>
                             </div>
                         </section>
                         </ol>

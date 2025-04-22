@@ -63,13 +63,29 @@ public class UserController {
         User currentUser = this.userService.getUserById(hoidanit.getId());
 
         // In ID để debug
-        System.out.println("User ID from form: " + hoidanit.getId());
-        // currentUser.setPhone(hoidanit.getPhone());
-        currentUser.setFullName(hoidanit.getFullName());
-        currentUser.setPassword(hoidanit.getPassword());
+        if (currentUser != null) {
+            currentUser.setEmail(hoidanit.getEmail());
+            currentUser.setFullName(hoidanit.getFullName());
+            currentUser.setPassword(hoidanit.getPassword());
 
-        this.userService.handleSaveUser(currentUser);
+            this.userService.handleSaveUser(currentUser);
+        }
 
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{id}")
+    public String getDeleteUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        // User user = new User();
+        // user.setId(id);
+        model.addAttribute("newUser", new User());
+        return "admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String postDeleteUser(Model model, @ModelAttribute("newUser") User eric) {
+        this.userService.deleteAUser(eric.getId());
         return "redirect:/admin/user";
     }
 
