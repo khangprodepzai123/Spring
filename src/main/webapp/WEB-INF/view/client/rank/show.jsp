@@ -41,7 +41,7 @@
                 <main>
                     <div class="leaderboard-header">
                         <img alt="Golden trophy held by two hands with orange ribbon flowing around" class="trophy"
-                            src="images/client/images/pngegg.png" width="150" height="150">
+                            src="images/client/images/cup.png" width="150" height="150">
                         <h1>LeaderBoard</h1>
 
                     </div>
@@ -53,40 +53,45 @@
                     </div>
                     <div class="container-fluid px-4">
 
-                        <div class="mt-5">
-                            <div class="row">
-                                <div class="col-12 mx-auto">
 
-                                    <table class=" table table-bordered table-hover ">
-                                        <thead>
+
+                        <div class="container mt-5">
+                            <h2 class="mb-4 text-center">Xếp hạng users theo số bài code</h2>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped align-middle">
+                                    <thead class="table-primary text-center">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Họ tên</th>
+                                            <th>Email</th>
+                                            <th>Số bài code</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach var="summary" items="${userRankingSummaries}">
                                             <tr>
-                                                <th>Xếp hạng</th>
-                                                <th>Email</th>
-                                                <th>Tên người dùng</th>
-
-                                                <th>Điểm</th>
-
+                                                <td class="text-center">
+                                                    <c:out value="${summary.userId}" />
+                                                </td>
+                                                <td>
+                                                    <c:out value="${summary.fullName}" />
+                                                </td>
+                                                <td>
+                                                    <c:out value="${summary.email}" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <c:out value="${summary.problemCount}" />
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:forEach var="user" items="${users1}">
-
-                                                <tr>
-                                                    <th>${user.id}</th>
-                                                    <td>${user.email}</td>
-                                                    <td>${user.fullName}</td>
-
-                                                    <td>${user.sobaicode}</td>
-
-
-                                                </tr>
-
-                                            </c:forEach>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
+                                        </c:forEach>
+                                        <c:if test="${empty userRankingSummaries}">
+                                            <tr>
+                                                <td colspan="4" class="text-center text-muted">Không có dữ liệu xếp
+                                                    hạng.</td>
+                                            </tr>
+                                        </c:if>
+                                    </tbody>
+                                </table>
                             </div>
 
                         </div>
